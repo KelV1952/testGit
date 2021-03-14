@@ -223,8 +223,8 @@ function postData(form) {
     form.append(statusMessage);
 
     const xhr = new XMLHttpRequest();
-    xhr.open('POST','server.php');
-   // xhr.setRequestHeader('Content-type','multipart/form-data','charset=utf-8');
+    xhr.open('POST','https://webhook.site/53a5141f-5221-43f4-b299-8a0c0aca7da4');
+    xhr.setRequestHeader('Content-type','multipart/form-data','charset=utf-8');
 
     const formData = new FormData(form);
     xhr.send(formData);
@@ -253,8 +253,8 @@ function showThanksModal(message){
       thanksModal.classList.add('modal__dialog')
       thanksModal.innerHTML = `
         <div class="mogal__content" > 
-          <div class="mogal__title">${message.success} </div>
-          <div class="mogal__close" data-close>&times;  </div>
+          <div class="mogal__title">${message}</div>
+          <div class="mogal__close" data-close>&times;</div>
         </div>
       `;
 
@@ -269,7 +269,7 @@ function showThanksModal(message){
  //fetch запросы к серверу
  fetch('https://jsonplaceholder.typicode.com/posts',{
    method:'POST',
-   body:JSON.stringify({name:"Alex"}),
+   body:JSON.stringify({ name:"Alex" }),
    headers:{
     'Content-type':'application/json'
    }
